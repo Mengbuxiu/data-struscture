@@ -148,6 +148,11 @@ public class BST<E extends Comparable<E>> {
        }
         System.out.println();
     }
+
+    /**
+     * 删除任意节点值为e的元素
+     * @param e
+     */
     public void remove(E e){
         root = remove(root,e);
     }
@@ -165,11 +170,12 @@ public class BST<E extends Comparable<E>> {
             node.right = remove(node.right, e);
             return node;
         }
-        else {
+        else { //e eq node.e
+            //假如左右都为空，那么在执行第一个if时会return null，不会有任何影响
             // 待删除节点左子树为空的情况
             if (node.left == null){
-                Node rightNode = node.right;
-                node.right = null;
+                Node rightNode = node.right; //保存右子树
+                node.right = null; //删除原右子树节点
                 size --;
                 return rightNode;
             }
@@ -184,10 +190,10 @@ public class BST<E extends Comparable<E>> {
 
             // 找到比待删除节点大的最小节点, 即待删除节点右子树的最小节点
             // 用这个节点顶替待删除节点的位置
-            Node successor = miniNum(node.right);
-            successor.right = removeMin(node.right);
-            successor.left = node.left;
-            node.left = node.right = null;
+            Node successor = miniNum(node.right); //比待删除节点的值稍大的值
+            successor.right = removeMin(node.right);//这里的删除右字数的最小值其实就是 successor.e
+            successor.left = node.left;//拼接待删除node的左子树
+            node.left = node.right = null; //将原待删除的节点node的左右子树的都删除
             return successor;
         }
     }
@@ -279,7 +285,7 @@ public class BST<E extends Comparable<E>> {
         StringBuilder res = new StringBuilder();
         generateString(root, 0, res);
         return res.toString();
-    }*/
+    }
 
     // 生成以node为根节点，深度为depth的描述二叉树的字符串
     private void generateString(Node node, int depth, StringBuilder res){
@@ -299,5 +305,5 @@ public class BST<E extends Comparable<E>> {
         for(int i = 0 ; i < depth ; i ++)
             res.append("-");
         return res.toString();
-    }
+    }*/
 }

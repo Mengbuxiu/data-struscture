@@ -11,7 +11,7 @@ public class Test {
         bst.add(6);
         bst.add(9);
         bst.levelOrder();
-        System.out.println(bst.removeMax());
+        bst.remove(7);
         bst.levelOrder();
 //        System.out.println(bst.miniNum());
 //        System.out.println(bst.maxNum());
