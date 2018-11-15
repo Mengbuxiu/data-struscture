@@ -12,7 +12,7 @@ import java.util.Stack;
 /**
  * @author zl
  * @date 2018-11-13 14:49:31
- *
+ * 应用栈：批量加密数据库中的列数据
  */
 
 public class EntryAllSalary {
