@@ -50,7 +50,7 @@ public class SegmentTree<E> {
 
         //添加父节点元素
         tree[treeIndex] = merger.merge(tree[leftTreeIndex], tree[rightTreeIndex]);
-        System.out.println(tree[treeIndex]);
+        //System.out.println(tree[treeIndex]);
     }
     // 返回区间[queryL, queryR]的值
     public E query(int queryL, int queryR){
