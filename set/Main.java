@@ -1,3 +1,5 @@
+package set;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -7,7 +9,7 @@ public class Main {
         System.out.println("Pride and Prejudice");
 
         ArrayList<String> words1 = new ArrayList<>();
-        if(FileOperation.readFile("pride-and-prejudice.txt", words1)) {
+        if(FileOperation.readFile("D:\\zhenglin\\work_soft\\idea_wp\\HandwritingCode\\src\\pride-and-prejudice.txt", words1)) {
             System.out.println("Total words: " + words1.size());
 
             BSTSet<String> set1 = new BSTSet<>();
@@ -22,7 +24,7 @@ public class Main {
         System.out.println("A Tale of Two Cities");
 
         ArrayList<String> words2 = new ArrayList<>();
-        if(FileOperation.readFile("a-tale-of-two-cities.txt", words2)){
+        if(FileOperation.readFile("D:\\zhenglin\\work_soft\\idea_wp\\HandwritingCode\\src\\a-tale-of-two-cities.txt", words2)){
             System.out.println("Total words: " + words2.size());
 
             BSTSet<String> set2 = new BSTSet<>();

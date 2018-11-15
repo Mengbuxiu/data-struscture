@@ -1,3 +1,5 @@
+package set;
+
 public interface Set<E> {
 
     void add(E e);
