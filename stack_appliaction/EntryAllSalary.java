@@ -16,7 +16,9 @@ import java.util.Stack;
  */
 
 public class EntryAllSalary {
-
+	/**
+	 * 鉴于可能不止一个字段要被加密，可以传入map个想要加密的值
+	 */
 	public void entry(){
 		 //声明Connection对象
 	    Connection con;
