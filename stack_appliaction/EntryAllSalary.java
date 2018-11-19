@@ -25,7 +25,7 @@ public class EntryAllSalary {
 	    //驱动程序名
 	    String driver = "com.mysql.jdbc.Driver";
 	    //URL指向要访问的数据库名mydata
-	    String url = "jdbc:mysql://192.168.16.159:3306/eos";
+	    String url = "jdbc:mysql://127.0.0.1/test";
 	    //MySQL配置时的用户名
 	    String user = "xxx";
 	    //MySQL配置时的密码
@@ -37,7 +37,7 @@ public class EntryAllSalary {
 	        //1.getConnection()方法，连接MySQL数据库！！
 	        con = DriverManager.getConnection(url, user, password);
 	        if (!con.isClosed()) {
-	            System.out.println("Succeeded connecting to the Database!");
+	            System.out.println("Success connecting to the Database!");
 	        }
 	        Stack<Map> stack = new Stack<>();
 	        Statement statement2 = con.createStatement();
@@ -47,8 +47,9 @@ public class EntryAllSalary {
 	            	String salary = rs.getString("basicSalary");
 	            	String reqId = rs.getString("reqId");
 	            	Map<String,String> map = new HashMap<>();
-	            	map.put("salary", salary);
-	            	map.put("reqId", reqId);
+	            	if (salary != null && reqId != null)
+	            		map.put("salary", salary);
+	            		map.put("reqId", reqId);
 	            	stack.push(map);
 	            }
 	            rs.close();
