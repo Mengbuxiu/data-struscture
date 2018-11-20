@@ -15,7 +15,7 @@ public class UnionFind2 implements UF{
 
     @Override
     public int getSize() {
-        return 0;
+        return parent.length;
     }
 
     @Override
