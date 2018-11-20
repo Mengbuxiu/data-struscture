@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 public class Trie {
     private class Node{
-        private boolean isWord;
+        private boolean isWord;//当前节点是否为单词结尾
         TreeMap<Character,Node> next;
 
         public Node(boolean isWord){
@@ -51,5 +51,16 @@ public class Trie {
             cur = cur.next.get(c);
         }
         return cur.isWord;
+    }
+    public boolean isPrefix(String prefix){
+        Node cur = root;
+        for (int i = 0; i < prefix.length(); i++) {
+            char c = prefix.charAt(i);
+            if (cur.next.get(c) == null){
+                return false;
+            }
+            cur = cur.next.get(c);
+        }
+        return true;
     }
 }
