@@ -11,7 +11,6 @@ public class UnionFind2 implements UF{
         for (int i = 0; i < size; i++) {
             parent[i] = i;//初始化，每个节点都指向自己，每个节点都是一个独立的树
         }
-
     }
 
     @Override
