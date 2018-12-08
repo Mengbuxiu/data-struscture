@@ -47,9 +47,10 @@ public class EntryAllSalary {
 	            	String salary = rs.getString("basicSalary");
 	            	String reqId = rs.getString("reqId");
 	            	Map<String,String> map = new HashMap<>();
-	            	if (salary != null && reqId != null)
-	            		map.put("salary", salary);
+	            	if (salary != null && reqId != null){
+				map.put("salary", salary);
 	            		map.put("reqId", reqId);
+			}
 	            	stack.push(map);
 	            }
 	            rs.close();
